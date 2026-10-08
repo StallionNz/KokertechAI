@@ -1,0 +1,9 @@
+KokertechAI Research Brief
+
+Executive Summary:
+The KokertechAI system demonstrates advanced cognitive architecture with multi-tier memory, plugin-based tool execution, and interactive knowledge graph visualization.
+
+Key Findings:
+1. Memory Vault: Implements 3-tier memory (working, episodic, long-term) with semantic search
+2. Plugin System: 24 plugins across web, filesystem, memory, and agent categories
+3. Knowledge Graph: Interactive neural graph with drag-to-reposition, expand subgraph, and auto-linking

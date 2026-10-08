@@ -1,0 +1,63 @@
+# .pre-commit-config.yaml
+#
+# Pre-commit hook for the KokertechAI repo. Runs the ANTI-FRAGILITY
+# doc-comment validator (KNOWLEDGE.md §12) on every commit that touches
+# tests/test_*.py, so doc-comment drift trips FAIL exit BEFORE the commit
+# lands. Companion to the nightly Windows Task Scheduler cron
+# (install_nightly_anti_fragility_task.ps1) which catches local uncommitted
+# edits + provides a daily safety net.
+#
+# Install:
+#   pip install pre-commit          # one-time
+#   pre-commit install              # wires the git hook
+#   pre-commit run --all-files      # dry-run on whole tree
+#
+# Skip when iterating locally:
+#   git commit --no-verify -m "wip"  # bypasses the hook
+#
+# Cross-platform: works on Windows (Git Bash / WSL / PowerShell with
+# python on PATH) and on Linux/macOS. Pure system-invoked hook, no
+# network download required (local repo type).
+#
+# Cron-bypass rationale: the locator regex targets tests/test_*.py only,
+# so edits to docs/, scripts/, plugins/ etc. do not trip the hook. To
+# manually audit non-test files, run the validator directly.
+
+repos:
+  - repo: local
+    hooks:
+      - id: anti-fragility-validator
+        name: ANTI-FRAGILITY doc-comment validator
+        # Entry runs the validator against the whole tests/ tree. Uses
+        # pass_filenames: false so the validator positional tests/
+        # argument flows through unchanged (the validator expects a
+        # directory or file list, not pre-commit per-file arg list).
+        entry: python .agents/skills/anti-fragility-pattern/scripts/validate_anti_fragility.py tests/
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+        # Only trip on test-file edits. Doc-only edits, plugin changes,
+        # scripts/ refactors, etc. are out-of-scope for this validator.
+        files: ^tests/.*\.py$
+        # Default mode (no --strict): STALE findings HARD FAIL the
+        # commit. ORPHAN + MISSING are advisory only, so a doc-comment
+        # addition that is mid-flight (guard not yet cross-linked) does
+        # not block the commit. Tighten with --strict if your team
+        # prefers advisory-as-hard-fail semantics.
+
+      - id: doc-drift-gate
+        name: DOC-DRIFT gate (retired myth strings / SSOT / version sync)
+        # Gate 8 (AGENTS.md §4): greps the LIVING doc set for retired claim
+        # families (write_file lore, PowerShell truth, frozen counts, "no
+        # Git"), asserts SSOT pointers, and cross-checks contract version
+        # references. Tombstone-tolerant: a match within +-2 lines of a
+        # retirement marker (RETIRED / disproven / had drifted / stub) is
+        # correct history, not drift. Archives (Backups/, memory/,
+        # CHANGELOG, dated reviews) are excluded by design.
+        entry: python scripts/assert_doc_drift.py
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+        # Trip on edits to any living doc: root *.md, docs/*.md (top level),
+        # agent/*.md, skill SKILL.mds. Non-doc edits skip the hook entirely.
+        files: ^(docs/[^/]+\.md|agent/[^/]+\.md|\.agents/skills/[^/]+/SKILL\.md|[^/]+\.md)$

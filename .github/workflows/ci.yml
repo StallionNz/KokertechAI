@@ -1,0 +1,31 @@
+name: Pre-Flight Quality Gates
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  gates:
+    name: Pre-Flight Gates
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Gate Tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff==0.16.8 pytest pytest-timeout pytest-xdist tabulate
+
+      - name: Run Quality Gates
+        run: |
+          python scripts/run_all_gates.py --fast

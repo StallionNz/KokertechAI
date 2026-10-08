@@ -1,0 +1,25 @@
+# KokertechAI hygiene gate — ruff (static analysis, Gate 7)
+ruff==0.16.8
+
+# --- Unpinned runtime deps, now locked to the .venv-installed versions ---
+# (Audit 2026-09-21: an offline-first, reproducibility-obsessed codebase
+#  cannot ship bare "flask" pins. All versions verified in .venv.)
+Flask==3.1.3
+psutil==7.2.2
+python-docx==1.2.0
+beautifulsoup4==4.14.3
+tabulate==0.10.0
+Pillow==12.3.0
+duckduckgo-search==8.1.1
+pytesseract==0.3.13
+sentence-transformers==5.5.0
+piper-tts
+docker>=7.0.0
+
+# Testing
+pytest==9.1.1
+pytest-timeout>=2.0.0
+pytest-xdist==3.8.0
+
+# crewai and langchain-openai (Sprint 8.3, requires Python <3.14)
+# pip install crewai langchain-openai

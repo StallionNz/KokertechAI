@@ -1,0 +1,10 @@
+{
+  "_comment": "Scoped relaxed config for ARCHITECTURE_REVIEW_L99.md only. Use with: npx markdownlint-cli --config .markdownlint.l99.json ARCHITECTURE_REVIEW_L99.md. Tables and code blocks excluded from MD013. MD060 disabled (wide tables by design). MD040 enabled (the indent-fix resolved the previous 2-space-indent closing-fence issue).",
+  "default": true,
+  "MD013": {
+    "line_length": 120,
+    "tables": false,
+    "code_blocks": false
+  },
+  "MD060": false
+}

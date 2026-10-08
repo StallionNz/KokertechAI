@@ -1,0 +1,37 @@
+[run]
+source = .
+concurrency = thread
+omit =
+    test_*.py
+    conftest.py
+    _test_registry.py
+    coverage_report/*
+    StallionNz/*
+    Backups/*
+    jdk/*
+    github_clones/*
+    Projects/*
+    Templates/*
+    live_sandbox_eval.py
+
+[report]
+fail_under = 80
+sort = Cover
+skip_empty = False
+skip_covered = False
+exclude_lines =
+    pragma: no cover
+    pragma: no cover$
+    \s+logging\.(debug|info|warning|error|critical)\(
+    \s+(pass|raise NotImplementedError)\s*$
+    \s+raise NotImplementedError\s*\(
+    \s+def __(repr|str|del)__\(self\):
+    \s+raise\s*$
+    if TYPE_CHECKING:
+    \s+assert False,?
+
+[html]
+directory = coverage_report
+title = KokertechAI Coverage Report
+skip_covered = False
+skip_empty = False

@@ -1,0 +1,44 @@
+# ruff.toml — KokertechAI static-analysis gate (Gate 7, Sprint 19.8)
+#
+# Philosophy: this codebase predates lint gates and leans on documented
+# broad-catch blocks (KNOWLEDGE.md §13 "silent broad-catch bug-masking").
+# A hard error sweep across 23k LOC would produce 900+ violations and get
+# the gate ignored — so the selected rules start BASELINED: existing
+# violations are stored in scripts/lint_baseline.json and the gate
+# (scripts/assert_no_new_lint.py) fails only on NEW violations. Old code
+# is triaged on touch; new code is held to the full rule set.
+#
+# Run locally:
+#   python -m ruff check .                 # see current violations
+#   python scripts/assert_no_new_lint.py   # baseline gate (CI behaviour)
+#   python scripts/assert_no_new_lint.py --rebaseline   # after fixing batch
+
+target-version = "py312"
+line-length = 100
+extend-exclude = [
+    "Backups", ".venv", ".tox", "_scratch", ".scratch", "_runs", "node_modules",
+    "vscode-freebuff-agents", "docs", "voice_models", "models", "data",
+    "settings_backups", "_diag", ".agents", ".blackbox", ".blackboxcli",
+    ".fsc", ".sessions", ".vs", ".vscode", ".claude", "__pycache__",
+]
+
+[lint]
+select = [
+    "F",      # pyflakes: undefined names, unused imports, f-string bugs
+    "E722",   # bare except
+    "B",      # flake8-bugbear: mutable defaults, bare raise-from issues
+    "S",      # bandit: S106 hardcoded passwords, S307 eval, S602 shell=True
+    "DTZ",    # naive datetime usage
+    "BLE001", # blind `except Exception` (broad-catch-ok comment culture)
+]
+
+[lint.per-file-ignores]
+"tests/**" = ["S101", "BLE001", "DTZ"]   # asserts + time-freeze fixtures are fine in tests
+"conftest.py" = ["S101", "BLE001", "DTZ"]
+"scripts/**" = ["T201"]
+
+[lint.flake8-bugbear]
+extend-immutable-calls = []  # reserve for pytest.raises-style additions
+
+[lint.mccabe]
+max-complexity = 30  # lenient: legacy god-methods are baselined anyway

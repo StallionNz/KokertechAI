@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "schema": "tabs-regression-baseline",
+  "captured_at": "2026-10-02T18:49:34.891118+00:00",
+  "files": {
+    "tests/test_session_log_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 37.3
+    },
+    "tests/test_settings_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 54.3
+    },
+    "tests/test_web_view_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 49.0
+    },
+    "tests/test_health_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 52.7
+    },
+    "tests/test_memory_browser_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 49.0
+    },
+    "tests/test_mcp_client_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 41.2
+    },
+    "tests/test_neural_graph.py": {
+      "status": "PASS",
+      "duration_seconds": 30.6
+    },
+    "tests/test_rag_tab.py": {
+      "status": "PASS",
+      "duration_seconds": 37.3
+    },
+    "tests/test_sprint13_ui_wiring.py": {
+      "status": "PASS",
+      "duration_seconds": 53.3
+    },
+    "tests/test_tab_qt_interface.py": {
+      "status": "PASS",
+      "duration_seconds": 35.0
+    },
+    "tests/test_hotkey_system.py": {
+      "status": "PASS",
+      "duration_seconds": 40.5
+    },
+    "tests/test_kokertechController.py": {
+      "status": "PASS",
+      "duration_seconds": 39.3
+    }
+  }
+}

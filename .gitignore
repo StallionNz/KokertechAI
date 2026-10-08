@@ -1,0 +1,142 @@
+# .gitignore — KokertechAI
+# Created 2026-09-21 (Sprint 19.8 audit); git initialized 2026-09-22
+# (Sprint 19.8.3 — the audit's #1 systemic-risk item closed). Large
+# binaries, secrets, and ephemera must never enter history: a repo can
+# un-commit, but it cannot un-leak.
+
+# --- Secrets (CRITICAL: KOKERTECH_API_KEY lives here) ---
+.env
+
+# --- Databases (5+ GB vault, WAL sidecars, orphan DBs) ---
+*.db
+*.db-shm
+*.db-wal
+
+# --- Large binaries (12 GB models, 290 MB voices, 111 MB backups) ---
+models/
+voice_models/
+Backups/
+settings_backups/
+
+# --- Python runtime artifacts ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# --- Virtual environments ---
+.venv/
+venv/
+
+# --- Node (vscode-freebuff-agents build tree) ---
+node_modules/
+out/
+
+# --- Ephemeral project output / diagnostics / runs ---
+_runs/
+_diag/
+_scratch/
+.scratch/
+.sessions/
+execution_log.txt
+_pytest_full_output.txt
+session_journal.jsonl
+
+# --- Editor / OS noise ---
+.vs/
+.vscode/
+.claude/settings.local.json
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# --- AI assistant workspaces (ephemeral state) ---
+.blackbox/
+.blackboxcli/
+.fsc/
+.claude/
+.agents/
+
+# --- Runtime-mutated state (recreated by the app on every run) ---
+user_identity.json
+openclaw-workspace-state.json
+data/resource_history.json
+
+# --- Forensic leftovers (recovery saga, 2026-07) ---
+*.py.corrupted
+
+# --- Build artifacts (rebuilt by build scripts; never history) ---
+build/
+dist/
+*.spec
+/KokertechAi.exe
+/KokertechAi.pdb
+*.pdb
+
+# Live-app runtime state (mutated continuously by the running app / client)
+data/chat_history.json
+data/screenshots/
+data/logs/
+.freebuff/
+context_summary.txt
+data/logs/.save_complete
+data/screenshots/
+
+# --- pytest runtime artifacts ---
+tests/_test_*.txt
+
+# --- Ephemeral audit logs & local test files ---
+data/tool_execution_audit.jsonl
+*.zip
+testKai.txt
+
+# --- Personal assistant workspace (private context: never published) ---
+# Untracked 2026-10-07, before this repo was switched to public. These hold
+# the owner's profile, session logs, and curated long-term memory, so they
+# stay local-only. scripts/assert_doc_drift.py reads SOUL.md/IDENTITY.md
+# from disk and skips absent files, so keeping them present but untracked
+# keeps that gate green.
+/MEMORY.md
+/USER.md
+/SOUL.md
+/IDENTITY.md
+/memory/
+/AGENTS.md
+/TOOLS.md
+
+# --- Internal working docs (not published) ---
+# Untracked 2026-10-07 when the repo was reduced to source + README. The
+# files stay ON DISK and are NOT deleted: scripts/assert_no_corrupted_files.py
+# (Gate 9) reads recovery_manifest.md from the filesystem and hard-fails when
+# it is absent, and scripts/assert_doc_drift.py / check_knowledge_anchors.py
+# .glob() these directories and tolerate their absence. Untracking keeps the
+# gate suite green while publishing nothing.
+/docs/
+/save_session.md
+/HEARTBEAT.md
+/recovery_manifest.md
+/recovery_resolution_20260722.md
+
+# --- Personal data (untracked 2026-10-09) ---
+# app_settings.json carries the owner's name/background/preferences; these are
+# user-generated state, kept on disk but never published.
+app_settings.json
+custom_themes.json
+personas.json
+
+# --- Runtime data tree (recreated by the app on every run) ---
+data/
+
+# --- Local decompile/build tooling ---
+tools/
+
+# --- Office documents ---
+*.docx
+
+# --- Internal project docs, kept local-only (not published) ---
+/CONTEXT.md
+/KNOWN_FAILURES.md
+/TOOL_USAGE_RULES.md
