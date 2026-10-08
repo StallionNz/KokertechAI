@@ -16,6 +16,8 @@ It is built as a JARVIS-style digital assistant rather than a chat box: it drive
 the desktop, indexes your documents, maintains a long-term memory graph, and can
 chain all of that together through a YAML workflow engine.
 
+![KokertechAI Desktop Dashboard](assets/dashboard_preview.png)
+
 ---
 
 ## Highlights
