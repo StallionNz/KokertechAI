@@ -771,6 +771,20 @@ class TestOnAnchorClicked(unittest.TestCase):
         url.toString.return_value = ""
         self.ui._on_anchor_clicked(url)
 
+    def test_settings_scheme_switches_tab(self):
+        self.ui._switch_to_tab_by_name = MagicMock()
+        url = MagicMock()
+        url.toString.return_value = "kokertech-settings://"
+        self.ui._on_anchor_clicked(url)
+        self.ui._switch_to_tab_by_name.assert_called_once_with("Settings")
+
+    @patch("PyQt6.QtGui.QDesktopServices.openUrl")
+    def test_open_models_scheme_opens_folder(self, mock_open):
+        url = MagicMock()
+        url.toString.return_value = "kokertech-open-models://"
+        self.ui._on_anchor_clicked(url)
+        mock_open.assert_called_once()
+
 
 class TestPipelineViewInGraph(unittest.TestCase):
     """_pipeline_view_in_graph uses _switch_to_tab(indexOf) to
@@ -1221,4 +1235,36 @@ class TestRefreshModelStatusUI(unittest.TestCase):
 
         self.ui.model_status_lbl.setText.assert_called_with("⚪ No model selected")
         self.ui.main_model_header_lbl.setText.assert_called_with("⚪ No model selected")
+
+
+class TestWelcomeCard(unittest.TestCase):
+    """Tests for _format_welcome_card and _show_welcome_card_if_empty in AppUIMixin."""
+
+    def setUp(self):
+        self.ui = _make_ui()
+
+    def test_format_welcome_card_no_model(self):
+        with patch.dict("app_ui.CONFIG", {"model_file": ""}, clear=False):
+            html = self.ui._format_welcome_card()
+            self.assertIn("No local model loaded yet", html)
+            self.assertIn("download_starter_model.py", html)
+            self.assertIn("kokertech-settings://", html)
+            self.assertIn("kokertech-open-models://", html)
+
+    def test_format_welcome_card_with_model(self):
+        with patch.dict("app_ui.CONFIG", {"model_file": "qwen2.5-1.5b-instruct.gguf"}, clear=False):
+            html = self.ui._format_welcome_card()
+            self.assertIn("Active Model:", html)
+            self.assertIn("qwen2.5-1.5b-instruct.gguf", html)
+
+    def test_show_welcome_card_if_empty_sets_html(self):
+        self.ui.chat_display.toPlainText.return_value = ""
+        self.ui._show_welcome_card_if_empty()
+        self.ui.chat_display.setHtml.assert_called_once()
+
+    def test_show_welcome_card_if_empty_skipped_when_text_present(self):
+        self.ui.chat_display.toPlainText.return_value = "Existing chat message"
+        self.ui._show_welcome_card_if_empty()
+        self.ui.chat_display.setHtml.assert_not_called()
+
 

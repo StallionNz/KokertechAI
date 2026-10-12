@@ -231,6 +231,61 @@ class AppUIMixin:
         except (RuntimeError, AttributeError):
             pass
 
+    def _format_welcome_card(self):
+        """Format an introductory welcome/starter card for empty chat displays.
+
+        Provides immediate context for first-run users or empty workspaces:
+        - Points to scripts/download_starter_model.py for downloading tested GGUF models.
+        - Provides clickable scheme links: kokertech-settings:// and kokertech-open-models://.
+        """
+        active_model = CONFIG.get("model_file", "").strip()
+        if active_model:
+            model_info = (
+                f"<div style='margin-top: 8px; font-size: 10pt; color: #10B981;'>"
+                f"🟢 <b>Active Model:</b> {self._html_escape(os.path.basename(active_model))}"
+                f"</div>"
+                f"<div style='margin-top: 4px; font-size: 9pt; color: #9CA3AF;'>"
+                f"Type your prompt in the box below to start."
+                f"</div>"
+            )
+        else:
+            model_info = (
+                "<div style='margin-top: 8px; font-size: 10pt; color: #F59E0B;'>"
+                "⚪ <b>No local model loaded yet.</b>"
+                "</div>"
+                "<div style='margin-top: 6px; font-size: 9.5pt; color: #D1D5DB; line-height: 1.5;'>"
+                "1. Download a compact starter model (e.g. Qwen 2.5 0.5B / 1.5B) via terminal:<br>"
+                "&nbsp;&nbsp;&nbsp;&nbsp;<code>python scripts/download_starter_model.py</code><br>"
+                "2. Or place any <code>.gguf</code> model file directly into your models folder: "
+                "<a href='kokertech-open-models://' style='color: #60A5FA; text-decoration: none;'>📂 <b>Open Models Folder</b></a><br>"
+                "3. Switch to <a href='kokertech-settings://' style='color: #60A5FA; text-decoration: none;'>⚙️ <b>Settings</b></a>, select your model, and click <b>⚡ Apply</b>."
+                "</div>"
+            )
+
+        return (
+            "<div style='border: 1px solid #3B82F6; padding: 14px 16px; margin: 8px 0; "
+            "background-color: rgba(59, 130, 246, 0.06); border-radius: 6px;'>"
+            "<div style='font-size: 13pt; font-weight: bold; color: #60A5FA; margin-bottom: 4px;'>"
+            "🚀 Welcome to KokertechAI"
+            "</div>"
+            "<div style='font-size: 9.5pt; color: #9CA3AF; margin-bottom: 8px;'>"
+            "100% Offline · Local-In-Process · Executive Desktop AI"
+            "</div>"
+            f"{model_info}"
+            "</div>"
+        )
+
+    def _show_welcome_card_if_empty(self):
+        """Display a welcome card in chat_display if no chat content exists."""
+        try:
+            if hasattr(self, 'chat_display') and self.chat_display:
+                current_text = self.chat_display.toPlainText()
+                if isinstance(current_text, str) and not current_text.strip():
+                    self.chat_display.setHtml(self._format_welcome_card())
+        except (RuntimeError, AttributeError):
+            # Intentional no-op (silent-catch audit): best-effort welcome card on missing or torn-down widget
+            pass
+
     def refresh_model_status_ui(self):
         """Refresh every sidebar, header, and panel indicator that reflects model state.
 
@@ -694,6 +749,20 @@ class AppUIMixin:
                 self.log_to_audit("🔁 Retried last prompt")
             else:
                 self.log_to_audit("⚠️ No last prompt to retry")
+            return
+        if url_str == "kokertech-settings://":
+            if hasattr(self, "_switch_to_tab_by_name"):
+                self._switch_to_tab_by_name("Settings")
+            return
+        if url_str == "kokertech-open-models://":
+            try:
+                from PyQt6.QtCore import QUrl
+                from PyQt6.QtGui import QDesktopServices
+                models_dir = CONFIG.get("models_dir", os.path.join(WORKSPACE_DIR, "models"))
+                os.makedirs(models_dir, exist_ok=True)
+                QDesktopServices.openUrl(QUrl.fromLocalFile(os.path.abspath(models_dir)))
+            except (OSError, RuntimeError, AttributeError) as e:
+                self.log_to_audit(f"⚠️ Could not open models folder: {e}")
             return
         # Re-open external URLs (preserves pre-Stop-button behavior).
         if url_str and url_str not in ("", "#"):

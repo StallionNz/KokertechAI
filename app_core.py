@@ -187,6 +187,7 @@ class KokertechDashboard(
 
         self.apply_theme(CONFIG.get("active_theme", "Cyberpunk (Default)"))
         self._load_chat_history()
+        self._show_welcome_card_if_empty()
 
         if CONFIG.get("always_on_top", False):
             self.setWindowFlags(self.windowFlags() | Qt.WindowType.WindowStaysOnTopHint)
@@ -294,6 +295,8 @@ class KokertechDashboard(
         # Re-clamp after show() — onboarding may have resized or the
         # deferred clamp from __init__ may have fired while hidden.
         self._clamp_window_to_screen()
+        # Ensure welcome card is present if user skipped onboarding model load
+        self._show_welcome_card_if_empty()
         # Run integrity check after onboarding completes
         self._check_save_integrity()
 
