@@ -352,7 +352,7 @@ class TestLoadUserProfile(unittest.TestCase):
         # A truthy dict WITHOUT name/tone keys exercises the .get() defaults;
         # an empty dict is falsy and short-circuits to the fallback string.
         text = self.svc.load_user_profile(lambda path: {"other_field": "x"})
-        self.assertIn("Preferred Name: Jacques", text)
+        self.assertIn("Preferred Name: User", text)
         self.assertIn("Tone Preferences: Technical & Direct", text)
 
 

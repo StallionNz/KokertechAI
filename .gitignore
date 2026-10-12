@@ -34,12 +34,16 @@ venv/
 # --- Node (vscode-freebuff-agents build tree) ---
 node_modules/
 out/
+vscode-freebuff-agents/
 
 # --- Ephemeral project output / diagnostics / runs ---
 _runs/
 _diag/
 _scratch/
 .scratch/
+conductor/
+subagents/
+vault/
 .sessions/
 execution_log.txt
 _pytest_full_output.txt

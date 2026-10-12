@@ -51,7 +51,7 @@ try:
 except ImportError:
     requests = None
 
-logger = get_logger(name="MemoryVault")
+logger = get_logger(name="Discovery")
 
 
 def _is_valid_positive_int(value) -> bool:

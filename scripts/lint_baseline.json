@@ -90,58 +90,20 @@
  },
  {
   "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 55
-  },
-  "filename": "action_replay.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 55
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 55,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 67
-  },
-  "filename": "action_replay.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 67
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 67,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
   "code": "DTZ005",
   "end_location": {
    "column": 70,
-   "row": 175
+   "row": 177
   },
   "filename": "action_replay.py",
   "fix": null,
   "location": {
    "column": 56,
-   "row": 175
+   "row": 177
   },
   "message": "`datetime.datetime.now()` called without a `tz` argument",
   "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 175,
+  "noqa_row": 177,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
  },
@@ -693,17 +655,17 @@
   "code": "B904",
   "end_location": {
    "column": 33,
-   "row": 656
+   "row": 685
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 17,
-   "row": 656
+   "row": 685
   },
   "message": "Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling",
   "name": "raise-without-from-inside-except",
-  "noqa_row": 656,
+  "noqa_row": 685,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/raise-without-from-inside-except"
  },
@@ -712,17 +674,17 @@
   "code": "S311",
   "end_location": {
    "column": 47,
-   "row": 660
+   "row": 689
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 32,
-   "row": 660
+   "row": 689
   },
   "message": "Standard pseudo-random generators are not suitable for cryptographic purposes",
   "name": "suspicious-non-cryptographic-random-usage",
-  "noqa_row": 660,
+  "noqa_row": 689,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/suspicious-non-cryptographic-random-usage"
  },
@@ -731,17 +693,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 33,
-   "row": 664
+   "row": 693
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 24,
-   "row": 664
+   "row": 693
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 664,
+  "noqa_row": 693,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -750,17 +712,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 29,
-   "row": 917
+   "row": 946
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 20,
-   "row": 917
+   "row": 946
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 917,
+  "noqa_row": 946,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -769,17 +731,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 29,
-   "row": 1274
+   "row": 1303
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 20,
-   "row": 1274
+   "row": 1303
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 1274,
+  "noqa_row": 1303,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -788,17 +750,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 25,
-   "row": 1310
+   "row": 1339
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 16,
-   "row": 1310
+   "row": 1339
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 1310,
+  "noqa_row": 1339,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -807,17 +769,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 29,
-   "row": 1430
+   "row": 1459
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 20,
-   "row": 1430
+   "row": 1459
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 1430,
+  "noqa_row": 1459,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -826,17 +788,17 @@
   "code": "S603",
   "end_location": {
    "column": 47,
-   "row": 1542
+   "row": 1571
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 24,
-   "row": 1542
+   "row": 1571
   },
   "message": "`subprocess` call: check for execution of untrusted input",
   "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 1542,
+  "noqa_row": 1571,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
  },
@@ -845,17 +807,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 29,
-   "row": 1559
+   "row": 1588
   },
   "filename": "ai_base.py",
   "fix": null,
   "location": {
    "column": 20,
-   "row": 1559
+   "row": 1588
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 1559,
+  "noqa_row": 1588,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -3909,17 +3871,17 @@
   "code": "DTZ005",
   "end_location": {
    "column": 24,
-   "row": 307
+   "row": 310
   },
   "filename": "config.py",
   "fix": null,
   "location": {
    "column": 10,
-   "row": 307
+   "row": 310
   },
   "message": "`datetime.datetime.now()` called without a `tz` argument",
   "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 307,
+  "noqa_row": 310,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
  },
@@ -3928,17 +3890,17 @@
   "code": "DTZ005",
   "end_location": {
    "column": 35,
-   "row": 345
+   "row": 348
   },
   "filename": "config.py",
   "fix": null,
   "location": {
    "column": 21,
-   "row": 345
+   "row": 348
   },
   "message": "`datetime.datetime.now()` called without a `tz` argument",
   "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 345,
+  "noqa_row": 348,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
  },
@@ -3947,17 +3909,17 @@
   "code": "DTZ007",
   "end_location": {
    "column": 68,
-   "row": 493
+   "row": 496
   },
   "filename": "config.py",
   "fix": null,
   "location": {
    "column": 26,
-   "row": 493
+   "row": 496
   },
   "message": "Naive datetime constructed using `datetime.datetime.strptime()` without %z",
   "name": "call-datetime-strptime-without-zone",
-  "noqa_row": 493,
+  "noqa_row": 496,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/call-datetime-strptime-without-zone"
  },
@@ -3966,17 +3928,17 @@
   "code": "DTZ005",
   "end_location": {
    "column": 32,
-   "row": 637
+   "row": 640
   },
   "filename": "config.py",
   "fix": null,
   "location": {
    "column": 18,
-   "row": 637
+   "row": 640
   },
   "message": "`datetime.datetime.now()` called without a `tz` argument",
   "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 637,
+  "noqa_row": 640,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
  },
@@ -4917,239 +4879,39 @@
  },
  {
   "cell": null,
-  "code": "F401",
+  "code": "BLE001",
   "end_location": {
-   "column": 11,
-   "row": 4
+   "column": 21,
+   "row": 166
   },
-  "filename": "decompile_from_pyc.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 5
-     },
-     "location": {
-      "column": 1,
-      "row": 4
-     }
-    }
-   ],
-   "message": "Remove unused import: `sys`"
-  },
-  "location": {
-   "column": 8,
-   "row": 4
-  },
-  "message": "`sys` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 4,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "S110",
-  "end_location": {
-   "column": 13,
-   "row": 488
-  },
-  "filename": "decompile_from_pyc.py",
+  "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
-   "column": 5,
-   "row": 487
+   "column": 12,
+   "row": 166
   },
-  "message": "`try`-`except`-`pass` detected, consider logging the exception",
-  "name": "try-except-pass",
-  "noqa_row": 487,
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 166,
   "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
  {
   "cell": null,
   "code": "BLE001",
   "end_location": {
    "column": 21,
-   "row": 487
+   "row": 182
   },
-  "filename": "decompile_from_pyc.py",
+  "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
    "column": 12,
-   "row": 487
+   "row": 182
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 487,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F841",
-  "end_location": {
-   "column": 20,
-   "row": 543
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": {
-   "applicability": "unsafe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 544
-     },
-     "location": {
-      "column": 1,
-      "row": 543
-     }
-    }
-   ],
-   "message": "Remove assignment to unused variable `group_start`"
-  },
-  "location": {
-   "column": 9,
-   "row": 543
-  },
-  "message": "Local variable `group_start` is assigned to but never used",
-  "name": "unused-variable",
-  "noqa_row": 543,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-variable"
- },
- {
-  "cell": null,
-  "code": "F841",
-  "end_location": {
-   "column": 32,
-   "row": 1141
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": {
-   "applicability": "unsafe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 35,
-      "row": 1141
-     },
-     "location": {
-      "column": 17,
-      "row": 1141
-     }
-    }
-   ],
-   "message": "Remove assignment to unused variable `loop_end_offset`"
-  },
-  "location": {
-   "column": 17,
-   "row": 1141
-  },
-  "message": "Local variable `loop_end_offset` is assigned to but never used",
-  "name": "unused-variable",
-  "noqa_row": 1141,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-variable"
- },
- {
-  "cell": null,
-  "code": "S110",
-  "end_location": {
-   "column": 17,
-   "row": 1324
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 9,
-   "row": 1323
-  },
-  "message": "`try`-`except`-`pass` detected, consider logging the exception",
-  "name": "try-except-pass",
-  "noqa_row": 1323,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 25,
-   "row": 1323
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 16,
-   "row": 1323
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1323,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "S302",
-  "end_location": {
-   "column": 37,
-   "row": 1358
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 1358
-  },
-  "message": "Deserialization with the `marshal` module is possibly dangerous",
-  "name": "suspicious-marshal-usage",
-  "noqa_row": 1358,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/suspicious-marshal-usage"
- },
- {
-  "cell": null,
-  "code": "S110",
-  "end_location": {
-   "column": 13,
-   "row": 1465
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 5,
-   "row": 1464
-  },
-  "message": "`try`-`except`-`pass` detected, consider logging the exception",
-  "name": "try-except-pass",
-  "noqa_row": 1464,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 1464
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 1464
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1464,
+  "noqa_row": 182,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -5158,239 +4920,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 29,
-   "row": 1512
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 20,
-   "row": 1512
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1512,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 45,
-   "row": 1677
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 36,
-   "row": 1677
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1677,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 41,
-   "row": 1694
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 32,
-   "row": 1694
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1694,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 33,
-   "row": 1717
-  },
-  "filename": "decompile_from_pyc.py",
-  "fix": null,
-  "location": {
-   "column": 24,
-   "row": 1717
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 1717,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "B033",
-  "end_location": {
-   "column": 26,
-   "row": 71
-  },
-  "filename": "doc_pipeline.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 28,
-      "row": 71
-     },
-     "location": {
-      "column": 20,
-      "row": 71
-     }
-    }
-   ],
-   "message": "Remove duplicate item"
-  },
-  "location": {
-   "column": 20,
-   "row": 71
-  },
-  "message": "Sets should not contain duplicate item `\".cfg\"`",
-  "name": "duplicate-value",
-  "noqa_row": 71,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/duplicate-value"
- },
- {
-  "cell": null,
-  "code": "B033",
-  "end_location": {
-   "column": 34,
-   "row": 71
-  },
-  "filename": "doc_pipeline.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 34,
-      "row": 71
-     },
-     "location": {
-      "column": 26,
-      "row": 71
-     }
-    }
-   ],
-   "message": "Remove duplicate item"
-  },
-  "location": {
-   "column": 28,
-   "row": 71
-  },
-  "message": "Sets should not contain duplicate item `\".ini\"`",
-  "name": "duplicate-value",
-  "noqa_row": 71,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/duplicate-value"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 164
-  },
-  "filename": "doc_pipeline.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 164
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 164,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 180
-  },
-  "filename": "doc_pipeline.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 180
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 180,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 29,
-   "row": 264
+   "row": 271
   },
   "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
    "column": 20,
-   "row": 264
+   "row": 271
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 264,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "S110",
-  "end_location": {
-   "column": 21,
-   "row": 275
-  },
-  "filename": "doc_pipeline.py",
-  "fix": null,
-  "location": {
-   "column": 13,
-   "row": 274
-  },
-  "message": "`try`-`except`-`pass` detected, consider logging the exception",
-  "name": "try-except-pass",
-  "noqa_row": 274,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 29,
-   "row": 274
-  },
-  "filename": "doc_pipeline.py",
-  "fix": null,
-  "location": {
-   "column": 20,
-   "row": 274
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 274,
+  "noqa_row": 271,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -5399,17 +4939,17 @@
   "code": "S110",
   "end_location": {
    "column": 25,
-   "row": 317
+   "row": 330
   },
   "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
    "column": 17,
-   "row": 316
+   "row": 329
   },
   "message": "`try`-`except`-`pass` detected, consider logging the exception",
   "name": "try-except-pass",
-  "noqa_row": 316,
+  "noqa_row": 329,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
  },
@@ -5418,17 +4958,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 33,
-   "row": 316
+   "row": 329
   },
   "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
    "column": 24,
-   "row": 316
+   "row": 329
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 316,
+  "noqa_row": 329,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -5437,17 +4977,17 @@
   "code": "BLE001",
   "end_location": {
    "column": 25,
-   "row": 318
+   "row": 331
   },
   "filename": "doc_pipeline.py",
   "fix": null,
   "location": {
    "column": 16,
-   "row": 318
+   "row": 331
   },
   "message": "Do not catch blind exception: `Exception`",
   "name": "blind-except",
-  "noqa_row": 318,
+  "noqa_row": 331,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
@@ -10467,63 +10007,6 @@
  },
  {
   "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 47,
-   "row": 19
-  },
-  "filename": "scripts/archive/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 33,
-   "row": 19
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 19,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 21
-  },
-  "filename": "scripts/archive/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 21
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 21,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 46,
-   "row": 23
-  },
-  "filename": "scripts/archive/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 32,
-   "row": 23
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 23,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
   "code": "B007",
   "end_location": {
    "column": 12,
@@ -10594,82 +10077,6 @@
   "noqa_row": 71,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/raise-without-from-inside-except"
- },
- {
-  "cell": null,
-  "code": "S603",
-  "end_location": {
-   "column": 19,
-   "row": 37
-  },
-  "filename": "scripts/autotest_module.py",
-  "fix": null,
-  "location": {
-   "column": 5,
-   "row": 37
-  },
-  "message": "`subprocess` call: check for execution of untrusted input",
-  "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 37,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
- },
- {
-  "cell": null,
-  "code": "S607",
-  "end_location": {
-   "column": 37,
-   "row": 37
-  },
-  "filename": "scripts/autotest_module.py",
-  "fix": null,
-  "location": {
-   "column": 20,
-   "row": 37
-  },
-  "message": "Starting a process with a partial executable path",
-  "name": "start-process-with-partial-path",
-  "noqa_row": 37,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/start-process-with-partial-path"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 82,
-   "row": 45
-  },
-  "filename": "scripts/autotest_module.py",
-  "fix": null,
-  "location": {
-   "column": 68,
-   "row": 45
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 45,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 39,
-   "row": 51
-  },
-  "filename": "scripts/autotest_module.py",
-  "fix": null,
-  "location": {
-   "column": 25,
-   "row": 51
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 51,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
  },
  {
   "cell": null,
@@ -11144,112 +10551,315 @@
   "cell": null,
   "code": "F401",
   "end_location": {
-   "column": 24,
-   "row": 2
+   "column": 11,
+   "row": 4
   },
-  "filename": "scripts/dashboard.py",
+  "filename": "scripts/decompile_from_pyc.py",
   "fix": {
    "applicability": "safe",
    "edits": [
     {
-     "content": "from tkinter import messagebox",
+     "content": "",
      "end_location": {
-      "column": 36,
-      "row": 2
+      "column": 1,
+      "row": 5
      },
      "location": {
       "column": 1,
-      "row": 2
+      "row": 4
      }
     }
    ],
-   "message": "Remove unused import: `tkinter.ttk`"
+   "message": "Remove unused import: `sys`"
   },
   "location": {
-   "column": 21,
-   "row": 2
+   "column": 8,
+   "row": 4
   },
-  "message": "`tkinter.ttk` imported but unused",
+  "message": "`sys` imported but unused",
   "name": "unused-import",
-  "noqa_row": 2,
+  "noqa_row": 4,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/unused-import"
  },
  {
   "cell": null,
-  "code": "S603",
+  "code": "S110",
   "end_location": {
-   "column": 23,
-   "row": 53
+   "column": 13,
+   "row": 488
   },
-  "filename": "scripts/dashboard.py",
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 5,
+   "row": 487
+  },
+  "message": "`try`-`except`-`pass` detected, consider logging the exception",
+  "name": "try-except-pass",
+  "noqa_row": 487,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 21,
+   "row": 487
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 12,
+   "row": 487
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 487,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "F841",
+  "end_location": {
+   "column": 20,
+   "row": 543
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": {
+   "applicability": "unsafe",
+   "edits": [
+    {
+     "content": "",
+     "end_location": {
+      "column": 1,
+      "row": 544
+     },
+     "location": {
+      "column": 1,
+      "row": 543
+     }
+    }
+   ],
+   "message": "Remove assignment to unused variable `group_start`"
+  },
+  "location": {
+   "column": 9,
+   "row": 543
+  },
+  "message": "Local variable `group_start` is assigned to but never used",
+  "name": "unused-variable",
+  "noqa_row": 543,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+ },
+ {
+  "cell": null,
+  "code": "F841",
+  "end_location": {
+   "column": 32,
+   "row": 1141
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": {
+   "applicability": "unsafe",
+   "edits": [
+    {
+     "content": "",
+     "end_location": {
+      "column": 35,
+      "row": 1141
+     },
+     "location": {
+      "column": 17,
+      "row": 1141
+     }
+    }
+   ],
+   "message": "Remove assignment to unused variable `loop_end_offset`"
+  },
+  "location": {
+   "column": 17,
+   "row": 1141
+  },
+  "message": "Local variable `loop_end_offset` is assigned to but never used",
+  "name": "unused-variable",
+  "noqa_row": 1141,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+ },
+ {
+  "cell": null,
+  "code": "S110",
+  "end_location": {
+   "column": 17,
+   "row": 1324
+  },
+  "filename": "scripts/decompile_from_pyc.py",
   "fix": null,
   "location": {
    "column": 9,
-   "row": 53
+   "row": 1323
   },
-  "message": "`subprocess` call: check for execution of untrusted input",
-  "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 53,
+  "message": "`try`-`except`-`pass` detected, consider logging the exception",
+  "name": "try-except-pass",
+  "noqa_row": 1323,
   "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
+  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
  },
  {
   "cell": null,
-  "code": "S607",
+  "code": "BLE001",
   "end_location": {
-   "column": 48,
-   "row": 53
+   "column": 25,
+   "row": 1323
   },
-  "filename": "scripts/dashboard.py",
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 16,
+   "row": 1323
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1323,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "S302",
+  "end_location": {
+   "column": 37,
+   "row": 1358
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 12,
+   "row": 1358
+  },
+  "message": "Deserialization with the `marshal` module is possibly dangerous",
+  "name": "suspicious-marshal-usage",
+  "noqa_row": 1358,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/suspicious-marshal-usage"
+ },
+ {
+  "cell": null,
+  "code": "S110",
+  "end_location": {
+   "column": 13,
+   "row": 1465
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 5,
+   "row": 1464
+  },
+  "message": "`try`-`except`-`pass` detected, consider logging the exception",
+  "name": "try-except-pass",
+  "noqa_row": 1464,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/try-except-pass"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 21,
+   "row": 1464
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 12,
+   "row": 1464
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1464,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 29,
+   "row": 1512
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 20,
+   "row": 1512
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1512,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 45,
+   "row": 1677
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 36,
+   "row": 1677
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1677,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 41,
+   "row": 1694
+  },
+  "filename": "scripts/decompile_from_pyc.py",
+  "fix": null,
+  "location": {
+   "column": 32,
+   "row": 1694
+  },
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1694,
+  "severity": "error",
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
+ },
+ {
+  "cell": null,
+  "code": "BLE001",
+  "end_location": {
+   "column": 33,
+   "row": 1717
+  },
+  "filename": "scripts/decompile_from_pyc.py",
   "fix": null,
   "location": {
    "column": 24,
-   "row": 53
+   "row": 1717
   },
-  "message": "Starting a process with a partial executable path",
-  "name": "start-process-with-partial-path",
-  "noqa_row": 53,
+  "message": "Do not catch blind exception: `Exception`",
+  "name": "blind-except",
+  "noqa_row": 1717,
   "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/start-process-with-partial-path"
- },
- {
-  "cell": null,
-  "code": "S603",
-  "end_location": {
-   "column": 23,
-   "row": 58
-  },
-  "filename": "scripts/dashboard.py",
-  "fix": null,
-  "location": {
-   "column": 9,
-   "row": 58
-  },
-  "message": "`subprocess` call: check for execution of untrusted input",
-  "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 58,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
- },
- {
-  "cell": null,
-  "code": "S607",
-  "end_location": {
-   "column": 47,
-   "row": 58
-  },
-  "filename": "scripts/dashboard.py",
-  "fix": null,
-  "location": {
-   "column": 24,
-   "row": 58
-  },
-  "message": "Starting a process with a partial executable path",
-  "name": "start-process-with-partial-path",
-  "noqa_row": 58,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/start-process-with-partial-path"
+  "url": "https://docs.astral.sh/ruff/rules/blind-except"
  },
  {
   "cell": null,
@@ -11360,409 +10970,6 @@
   "cell": null,
   "code": "DTZ005",
   "end_location": {
-   "column": 47,
-   "row": 19
-  },
-  "filename": "scripts/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 33,
-   "row": 19
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 19,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 21
-  },
-  "filename": "scripts/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 21
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 21,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 46,
-   "row": 23
-  },
-  "filename": "scripts/live_sync_worker.py",
-  "fix": null,
-  "location": {
-   "column": 32,
-   "row": 23
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 23,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 31,
-   "row": 15
-  },
-  "filename": "scripts/live_worker.py",
-  "fix": null,
-  "location": {
-   "column": 17,
-   "row": 15
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 15,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 29,
-   "row": 33
-  },
-  "filename": "scripts/live_worker.py",
-  "fix": null,
-  "location": {
-   "column": 20,
-   "row": 33
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 33,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 10,
-   "row": 1
-  },
-  "filename": "scripts/master updater.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 2
-     },
-     "location": {
-      "column": 1,
-      "row": 1
-     }
-    }
-   ],
-   "message": "Remove unused import: `os`"
-  },
-  "location": {
-   "column": 8,
-   "row": 1
-  },
-  "message": "`os` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 1,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 15,
-   "row": 3
-  },
-  "filename": "scripts/master updater.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 4
-     },
-     "location": {
-      "column": 1,
-      "row": 3
-     }
-    }
-   ],
-   "message": "Remove unused import: `asyncio`"
-  },
-  "location": {
-   "column": 8,
-   "row": 3
-  },
-  "message": "`asyncio` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 3,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "S603",
-  "end_location": {
-   "column": 29,
-   "row": 47
-  },
-  "filename": "scripts/master updater.py",
-  "fix": null,
-  "location": {
-   "column": 15,
-   "row": 47
-  },
-  "message": "`subprocess` call: check for execution of untrusted input",
-  "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 47,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
- },
- {
-  "cell": null,
-  "code": "S607",
-  "end_location": {
-   "column": 51,
-   "row": 47
-  },
-  "filename": "scripts/master updater.py",
-  "fix": null,
-  "location": {
-   "column": 30,
-   "row": 47
-  },
-  "message": "Starting a process with a partial executable path",
-  "name": "start-process-with-partial-path",
-  "noqa_row": 47,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/start-process-with-partial-path"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 17,
-   "row": 49
-  },
-  "filename": "scripts/master updater.py",
-  "fix": null,
-  "location": {
-   "column": 8,
-   "row": 49
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 49,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 10,
-   "row": 1
-  },
-  "filename": "scripts/master_ultimate.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 2
-     },
-     "location": {
-      "column": 1,
-      "row": 1
-     }
-    }
-   ],
-   "message": "Remove unused import: `os`"
-  },
-  "location": {
-   "column": 8,
-   "row": 1
-  },
-  "message": "`os` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 1,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 30,
-   "row": 3
-  },
-  "filename": "scripts/master_ultimate.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 4
-     },
-     "location": {
-      "column": 1,
-      "row": 3
-     }
-    }
-   ],
-   "message": "Remove unused import: `datetime.datetime`"
-  },
-  "location": {
-   "column": 22,
-   "row": 3
-  },
-  "message": "`datetime.datetime` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 3,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "S603",
-  "end_location": {
-   "column": 28,
-   "row": 66
-  },
-  "filename": "scripts/master_ultimate.py",
-  "fix": null,
-  "location": {
-   "column": 14,
-   "row": 66
-  },
-  "message": "`subprocess` call: check for execution of untrusted input",
-  "name": "subprocess-without-shell-equals-true",
-  "noqa_row": 66,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
- },
- {
-  "cell": null,
-  "code": "S607",
-  "end_location": {
-   "column": 48,
-   "row": 66
-  },
-  "filename": "scripts/master_ultimate.py",
-  "fix": null,
-  "location": {
-   "column": 29,
-   "row": 66
-  },
-  "message": "Starting a process with a partial executable path",
-  "name": "start-process-with-partial-path",
-  "noqa_row": 66,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/start-process-with-partial-path"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 17,
-   "row": 69
-  },
-  "filename": "scripts/master_ultimate.py",
-  "fix": null,
-  "location": {
-   "column": 8,
-   "row": 69
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 69,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 18,
-   "row": 5
-  },
-  "filename": "scripts/optimizer_engine.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 6
-     },
-     "location": {
-      "column": 1,
-      "row": 5
-     }
-    }
-   ],
-   "message": "Remove unused import: `subprocess`"
-  },
-  "location": {
-   "column": 8,
-   "row": 5
-  },
-  "message": "`subprocess` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 5,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
-   "column": 39,
-   "row": 57
-  },
-  "filename": "scripts/optimizer_engine.py",
-  "fix": null,
-  "location": {
-   "column": 25,
-   "row": 57
-  },
-  "message": "`datetime.datetime.now()` called without a `tz` argument",
-  "name": "call-datetime-now-without-tzinfo",
-  "noqa_row": 57,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/call-datetime-now-without-tzinfo"
- },
- {
-  "cell": null,
-  "code": "DTZ005",
-  "end_location": {
    "column": 33,
    "row": 90
   },
@@ -11850,171 +11057,6 @@
   "noqa_row": 209,
   "severity": "error",
   "url": "https://docs.astral.sh/ruff/rules/subprocess-without-shell-equals-true"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 25,
-   "row": 22
-  },
-  "filename": "scripts/scrape_btc_price.py",
-  "fix": null,
-  "location": {
-   "column": 16,
-   "row": 22
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 22,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 25,
-   "row": 20
-  },
-  "filename": "scripts/scrape_btc_price_firefox.py",
-  "fix": null,
-  "location": {
-   "column": 16,
-   "row": 20
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 20,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 10,
-   "row": 6
-  },
-  "filename": "scripts/scrape_btc_price_firefox_debug.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 7
-     },
-     "location": {
-      "column": 1,
-      "row": 6
-     }
-    }
-   ],
-   "message": "Remove unused import: `os`"
-  },
-  "location": {
-   "column": 8,
-   "row": 6
-  },
-  "message": "`os` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 6,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 18
-  },
-  "filename": "scripts/scrape_btc_price_firefox_debug.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 18
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 18,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 29,
-   "row": 38
-  },
-  "filename": "scripts/scrape_btc_price_firefox_debug.py",
-  "fix": null,
-  "location": {
-   "column": 20,
-   "row": 38
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 38,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "BLE001",
-  "end_location": {
-   "column": 21,
-   "row": 40
-  },
-  "filename": "scripts/scrape_btc_price_inspect.py",
-  "fix": null,
-  "location": {
-   "column": 12,
-   "row": 40
-  },
-  "message": "Do not catch blind exception: `Exception`",
-  "name": "blind-except",
-  "noqa_row": 40,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/blind-except"
- },
- {
-  "cell": null,
-  "code": "F401",
-  "end_location": {
-   "column": 16,
-   "row": 3
-  },
-  "filename": "scripts/system_tune.py",
-  "fix": {
-   "applicability": "safe",
-   "edits": [
-    {
-     "content": "",
-     "end_location": {
-      "column": 1,
-      "row": 4
-     },
-     "location": {
-      "column": 1,
-      "row": 3
-     }
-    }
-   ],
-   "message": "Remove unused import: `platform`"
-  },
-  "location": {
-   "column": 8,
-   "row": 3
-  },
-  "message": "`platform` imported but unused",
-  "name": "unused-import",
-  "noqa_row": 3,
-  "severity": "error",
-  "url": "https://docs.astral.sh/ruff/rules/unused-import"
  },
  {
   "cell": null,

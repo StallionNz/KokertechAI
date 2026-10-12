@@ -52,7 +52,8 @@ def get_replay_mode() -> str:
         if mode in ("off", "record", "replay"):
             return mode
         return "off"
-    except Exception:
+    except (ImportError, AttributeError, KeyError, TypeError) as exc:
+        logger.debug(f"ActionReplay mode lookup fallback to off: {exc}")
         return "off"
 
 
@@ -64,7 +65,8 @@ def get_replay_file() -> str:
     try:
         from config import CONFIG
         return CONFIG.get("action_replay_file", _DEFAULT_REPLAY_FILE)
-    except Exception:
+    except (ImportError, AttributeError, KeyError, TypeError) as exc:
+        logger.debug(f"ActionReplay file lookup fallback to default: {exc}")
         return _DEFAULT_REPLAY_FILE
 
 

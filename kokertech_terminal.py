@@ -11,6 +11,7 @@ import time
 from datetime import datetime
 
 from ai_base import get_provider
+from config import CONFIG
 from logging_config import get_logger
 
 logger = get_logger(name="KokertechCLI")
@@ -48,7 +49,8 @@ def _get_input(context: dict = None) -> str:
         prompt_str = "· "
     elif style == "verbose":
         session = context.get("session_name", "default")
-        prompt_str = f"[{session}] Jacques > "
+        user_name = context.get("user_name") or CONFIG.get("name", "User")
+        prompt_str = f"[{session}] {user_name} > "
     elif style == "none":
         prompt_str = ""
     else:

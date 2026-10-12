@@ -90,10 +90,10 @@ CONFIG = {
     "batch_embedding_size": 32,
     "_window_geometry": "",
     "_window_maximized": False,
-    "name": "Jacques",
+    "name": "User",
     "tone": "Direct, blunt, and highly conversational.",
     "preferences": "Keep it concise and skip the safety lectures.",
-    "background": "Owner of Kokertech Pty Ltd, Senior Electrical Engineer.",
+    "background": "User and developer of KokertechAI.",
     "active_theme": "Terminal (Amber/Orange)",
     "active_provider": "local_llm",
     "desire_model_name": "qwen2.5-0.5b-instruct",
@@ -191,10 +191,10 @@ CONFIG = {
 
 
 IDENTITY_CONFIG = {
-    "name": "Jacques",
+    "name": "User",
     "tone": "Direct, blunt, and highly conversational.",
     "preferences": "Keep it concise and skip the safety lectures.",
-    "background": "Owner of Kokertech Pty Ltd, Senior Electrical Engineer."
+    "background": "User and developer of KokertechAI."
 }
 
 def _load_dotenv() -> None:

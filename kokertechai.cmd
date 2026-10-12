@@ -37,7 +37,11 @@ goto end
 goto end
 
 :run_web
-"%PYTHON_EXE%" "%KOKERTECH_DIR%\kokerpro_web.py"
+if /i "%~2"=="--legacy" (
+    "%PYTHON_EXE%" "%KOKERTECH_DIR%\kokerpro_web.py"
+) else (
+    "%PYTHON_EXE%" "%KOKERTECH_DIR%\kokerpro_fastapi.py" %2 %3 %4
+)
 goto end
 
 :run_model
@@ -58,7 +62,7 @@ echo.
 echo Usage:
 echo   kokertechai                Launch the interactive CLI terminal (default)
 echo   kokertechai gui            Launch the PyQt6 desktop GUI dashboard
-echo   kokertechai web            Launch the web interface
+echo   kokertechai web            Launch Architecture V2 web dashboard (or web --legacy)
 echo   kokertechai download-model Download recommended starter GGUF model
 echo   kokertechai gates          Run pre-flight quality gates
 echo   kokertechai test           Run CLI automated test suite

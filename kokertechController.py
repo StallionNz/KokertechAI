@@ -16,7 +16,7 @@ from typing import Optional
 import memory_vault
 from agentic_rag import AgenticRAGEngine
 from ai_base import cached_chat_completion, get_provider
-from config import CONFIG
+from config import CONFIG, WORKSPACE_DIR
 from logging_config import get_logger
 
 logger = get_logger(name="Controller")
@@ -96,13 +96,13 @@ class KokertechController:
         if self._tool_exec_svc is None:
             try:
                 from services.tool_execution_service import ToolExecutionService
-                self._tool_exec_svc = ToolExecutionService(workspace=svc.get("context_service").workspace if svc.has("context_service") else r"C:\KokertechAI")
+                self._tool_exec_svc = ToolExecutionService(workspace=svc.get("context_service").workspace if svc.has("context_service") else WORKSPACE_DIR)
             except (ImportError, RuntimeError, ValueError):
                 self._tool_exec_svc = None
         self._settings_cache_svc = get_settings_cache_service()
         self._stream_svc = get_provider_stream_service()
 
-        self.workspace = r"C:\KokertechAI"
+        self.workspace = WORKSPACE_DIR
         self.api_url = os.getenv("KOKERTECH_API_URL", "http://127.0.0.1:1234/v1/chat/completions")
         self.api_key = os.getenv("KOKERTECH_API_KEY", "")
         self.summary_file = os.path.join(self.workspace, "context_summary.txt")

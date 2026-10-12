@@ -121,7 +121,7 @@ class SettingsCacheService:
         if not data:
             return _DEFAULT_PROFILE
         return (
-            f"Preferred Name: {data.get('name', 'Jacques')}\n"
+            f"Preferred Name: {data.get('name', 'User')}\n"
             f"Tone Preferences: {data.get('tone', 'Technical & Direct')}\n"
         )
 

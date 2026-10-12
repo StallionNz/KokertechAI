@@ -53,14 +53,13 @@ try:
 except ImportError:
     np = None
 
-from config import CONFIG
+from config import CONFIG, WORKSPACE_DIR
 from logging_config import get_logger
 from ai_base import get_provider
 
 logger = get_logger(name="MemoryVault")
 
 # ─── Module-level paths ─────────────────────────────────────────────
-WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Version: 2.2.0 — 2026-09-22 — P0 remediation: episodic_journal.promoted
 #   marker; consolidate_episodic() is now idempotent (REGRESSION GUARD against
 #   the 2026-09-22 re-pollution: every lifecycle call re-promoted ALL

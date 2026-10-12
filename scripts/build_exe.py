@@ -23,6 +23,7 @@ WORKSPACE_DIR = os.environ.get(
 def main():
     parser = argparse.ArgumentParser(description="Package KokertechAI into a Windows executable")
     parser.add_argument("--onefile", action="store_true", help="Package into a single standalone .exe")
+    parser.add_argument("--onedir", action="store_true", help="Package into a directory (default)")
     args = parser.parse_args()
 
     # Verify PyInstaller is installed

@@ -51,6 +51,8 @@ class PipelineProgress:
     total: int = 0
     completed: int = 0
     results: List[PipelineResult] = field(default_factory=list)
+    current_file: str = ""
+    current_step: str = ""
 
     @property
     def percent(self) -> int:
@@ -68,7 +70,7 @@ _TEXT_EXTENSIONS = frozenset({
     ".txt", ".md", ".rst", ".py", ".js", ".ts", ".html", ".css", ".json",
     ".xml", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".conf", ".log",
     ".csv", ".tsv", ".sql", ".sh", ".bat", ".ps1", ".env", ".gitignore",
-    ".dockerfile", ".cfg", ".ini",
+    ".dockerfile",
 })
 
 _IMAGE_EXTENSIONS = frozenset({
@@ -171,9 +173,9 @@ def _extract_image_text(filepath: str) -> str:
     try:
         from PIL import Image
         import pytesseract
-        img = Image.open(filepath)
-        text = pytesseract.image_to_string(img)
-        return text.strip()
+        with Image.open(filepath) as img:
+            text = pytesseract.image_to_string(img)
+            return text.strip()
     except ImportError:
         logger.debug("pytesseract/Pillow not available — skipping OCR")
         return ""
@@ -251,14 +253,19 @@ def process_batch(
     progress = PipelineProgress(total=len(filepaths))
 
     for fp in filepaths:
+        progress.current_file = os.path.basename(fp)
+        progress.current_step = "Extracting"
         result = process_file(fp, chunk_size=chunk_size)
 
         if result.status == "success" and index_to_vault:
+            progress.current_step = "Indexing"
             try:
                 import memory_vault
+                content = f"[{os.path.basename(fp)}] {result.extracted_text}"
                 node_id = memory_vault.store_memory(
-                    result.extracted_text,
-                    source=f"doc_pipeline:{fp}",
+                    content,
+                    node_type="document",
+                    importance=5,
                 )
                 result.node_ids.append(node_id)
             except Exception as exc:
@@ -267,12 +274,18 @@ def process_batch(
 
         progress.results.append(result)
         progress.completed += 1
+        progress.current_step = "Done"
 
         if progress_callback:
             try:
-                progress_callback(progress.completed, progress.total)
-            except Exception:
-                pass
+                progress_callback(progress)
+            except TypeError:
+                try:
+                    progress_callback(progress.completed, progress.total)
+                except (TypeError, ValueError, RuntimeError, AttributeError, OSError) as cb_exc:
+                    logger.debug(f"Progress callback failed: {cb_exc}")
+            except (ValueError, RuntimeError, AttributeError, OSError) as cb_exc:
+                logger.debug(f"Progress callback failed: {cb_exc}")
 
     return progress
 

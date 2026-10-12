@@ -240,14 +240,40 @@ def cached_chat_completion(provider: AIProvider, messages: list,
     Cache entries expire after ``_RESPONSE_CACHE_TTL`` (60s).
     Errors are never cached. Returns a shallow copy of cached results.
     """
+    # ── Action Replay Integration ───────────────────────────────────────
+    replay_mode = CONFIG.get("action_replay_mode", "off")
+    replay_hash = None
+    if replay_mode in ("record", "replay"):
+        from action_replay import get_replay, compute_messages_hash
+        model_name = model or getattr(provider, "model", "")
+        replay_hash = compute_messages_hash(
+            messages=messages,
+            model=model_name,
+            temperature=temperature,
+            response_format=response_format,
+        )
+        if replay_mode == "replay":
+            ar = get_replay()
+            stored = ar.get(replay_hash)
+            if stored is not None:
+                logger.info(f"ActionReplay HIT for hash={replay_hash[:12]}...")
+                return dict(stored)
+            logger.warning(
+                f"ActionReplay MISS for hash={replay_hash[:12]}... falling back to provider"
+            )
+
     cache_enabled = CONFIG.get("response_cache_enabled", False)
     if not cache_enabled:
-        return provider.chat_completion(
+        result = provider.chat_completion(
             messages=messages, model=model, temperature=temperature,
             max_tokens=max_tokens, timeout=timeout, request_id=request_id,
             cancel_event=cancel_event, response_format=response_format,
             tools=tools, cache_prompt=cache_prompt
         )
+        if replay_mode == "record" and replay_hash and result and not result.get("error"):
+            from action_replay import get_replay
+            get_replay().record(replay_hash, result)
+        return result
 
     key = _compute_cache_key(messages, model, temperature, max_tokens,
                              response_format, tools)
@@ -273,6 +299,9 @@ def cached_chat_completion(provider: AIProvider, messages: list,
 
     # Only cache successful responses (no error)
     if result and not result.get("error"):
+        if replay_mode == "record" and replay_hash:
+            from action_replay import get_replay
+            get_replay().record(replay_hash, result)
         with _RESPONSE_CACHE_LOCK:
             max_size = CONFIG.get("response_cache_max_size", _RESPONSE_CACHE_MAX)
             if len(_RESPONSE_CACHE) >= max_size:

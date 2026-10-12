@@ -422,7 +422,7 @@ class SettingsTabMixin:
         protocol_preset_btn_row.addWidget(btn_delete_protocol_preset)
         layout.addRow('', protocol_preset_btn_row)
         self.protocol_edit = QTextEdit()
-        self.protocol_edit.setPlaceholderText('(Empty — uses built-in default protocol)\n\nOverride example:\nYou are KokertechAI, the Executive Core for Jacques.\nCRITICAL COGNITIVE PROTOCOL: ...')
+        self.protocol_edit.setPlaceholderText('(Empty — uses built-in default protocol)\n\nOverride example:\nYou are KokertechAI, the Executive Core for the user.\nCRITICAL COGNITIVE PROTOCOL: ...')
         self.protocol_edit.setMinimumHeight(120)
         self.protocol_edit.setMaximumHeight(200)
         self.protocol_edit.textChanged.connect(self._on_protocol_text_changed)

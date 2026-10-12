@@ -254,7 +254,7 @@ class ContextService:
         if not data:
             return "No specific personal identity layer configured yet."
         return (
-            f"Preferred Name: {data.get('name', 'Jacques')}\n"
+            f"Preferred Name: {data.get('name', 'User')}\n"
             f"Tone Preferences: {data.get('tone', 'Technical & Direct')}\n"
         )
 
